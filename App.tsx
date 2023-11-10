@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './src/home/HomeScreen';
-import { Routes } from './src/navigator/Routes';
+import { StackRoutes, TabRoutes } from './src/navigator/Routes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MealsScreen } from './src/meals/MealsScreen';
+import { HomeScreen } from './src/home/HomeScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NewMealScreen } from './src/meals/NewMeal';
 
-const Tab = createBottomTabNavigator<Routes>();
+const Tab = createBottomTabNavigator<TabRoutes>()
+
+const Stack = createNativeStackNavigator<StackRoutes>()
 
 export default function App() {
   return (
@@ -13,17 +17,13 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen options={{ headerShown: false }} name='Home' component={HomeScreen} />
         <Tab.Screen name='Meals' component={MealsScreen} />
+        <Stack.Screen name='New Meal' component={NewMealScreen} />
       </Tab.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+})
