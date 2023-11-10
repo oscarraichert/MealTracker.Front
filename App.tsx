@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './src/home/HomeScreen';
-import { Routes } from './navigator/Routes';
+import { Routes } from './src/navigator/Routes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MealsScreen } from './src/meals/MealsScreen';
 
