@@ -1,8 +1,8 @@
-import { NativeStackNavigationProp, NativeStackScreenProps } from "@react-navigation/native-stack"
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs"
 
 export type Routes = {
     "Home": undefined,
-    "Details": undefined
+    "Meals": undefined
 }
 
-export type Navigation = NativeStackNavigationProp<Routes, 'Home'>
+export type Navigation = BottomTabNavigationProp<Routes, 'Home'>

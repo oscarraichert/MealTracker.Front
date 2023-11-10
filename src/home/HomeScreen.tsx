@@ -4,11 +4,10 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { Navigation } from "../../navigator/Routes";
 
 function HomeScreen() {
-    const navigation = useNavigation<Navigation>()
+    const navigation = useNavigation<Navigation>();
     return (
         <View>
             <Text style={styles.text}>Home test</Text>
-            <Button title="Details" onPress={() => navigation.navigate('Details')} />
         </View>
     )
 };

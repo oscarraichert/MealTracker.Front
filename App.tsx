@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/home/HomeScreen';
-import DetailsScreen from './src/home/DetailsScreen';
 import { Routes } from './navigator/Routes';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MealsScreen } from './src/meals/MealsScreen';
 
-const Stack = createNativeStackNavigator<Routes>();
+const Tab = createBottomTabNavigator<Routes>();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name='Home' component={HomeScreen} />
-        <Stack.Screen name='Details' component={DetailsScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen options={{ headerShown: false }} name='Home' component={HomeScreen} />
+        <Tab.Screen name='Meals' component={MealsScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
