@@ -4,7 +4,7 @@ import { Routes } from "../navigator/Routes";
 import { Button, View } from "react-native";
 
 export function MealsScreen() {
-    const Navigation = useNavigation<Routes>();
+    const navigation = useNavigation<Routes>();
 
     return (
         <View>
