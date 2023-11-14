@@ -11,11 +11,9 @@ const Stack = createNativeStackNavigator<StackRoutes>()
 export function MealsScreen() {
     const navigation = useNavigation<StackNavigation>()
     return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name='New Meal' component={NewMealScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen options={{ headerShown: false }} name='New Meal' component={NewMealScreen} />
+        </Stack.Navigator>
     )
 }
 
