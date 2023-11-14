@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { TabRoutes, StackNavigation, StackRoutes } from "../navigator/Routes";
 import { StyleSheet, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
@@ -11,13 +11,11 @@ const Stack = createNativeStackNavigator<StackRoutes>()
 export function MealsScreen() {
     const navigation = useNavigation<StackNavigation>()
     return (
-        <View>
-            <View style={styles.body}>
-                <View style={styles.iconsRow}>
-                    <Entypo.Button iconStyle={styles.icon} name="add-to-list" size={20} onPress={() => navigation.navigate('New Meal')} />
-                </View>
-            </View>
-        </View>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name='New Meal' component={NewMealScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
 

@@ -9,15 +9,12 @@ import { NewMealScreen } from './src/meals/NewMeal';
 
 const Tab = createBottomTabNavigator<TabRoutes>()
 
-const Stack = createNativeStackNavigator<StackRoutes>()
-
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen options={{ headerShown: false }} name='Home' component={HomeScreen} />
         <Tab.Screen name='Meals' component={MealsScreen} />
-        <Stack.Screen name='New Meal' component={NewMealScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   )
