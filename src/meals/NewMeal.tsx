@@ -1,8 +1,31 @@
+import { Entypo } from "@expo/vector-icons";
 import React from "react";
-import { Text } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { StackNavigation } from "../navigator/Routes";
+import { useNavigation } from "@react-navigation/native";
 
 export function NewMealScreen() {
+    const navigation = useNavigation<StackNavigation>()
     return (
-        <Text>Teste</Text>
+        <View>
+            <View style={styles.body}>
+                <View style={styles.iconsRow}>
+                    <Entypo.Button iconStyle={styles.icon} name="add-to-list" size={26} onPress={() => navigation.navigate('New Meal')} />
+                </View>
+            </View>
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+    body: {
+        margin: "5%"
+    },
+    iconsRow: {
+        flexDirection: "row",
+        justifyContent: "space-between"
+    },
+    icon: {
+        marginRight: 0
+    }
+})

@@ -1,11 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { StackRoutes, TabRoutes } from './src/navigator/Routes';
+import { TabRoutes } from './src/navigator/Routes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MealsScreen } from './src/meals/MealsScreen';
 import { HomeScreen } from './src/home/HomeScreen';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NewMealScreen } from './src/meals/NewMeal';
 
 const Tab = createBottomTabNavigator<TabRoutes>()
 
