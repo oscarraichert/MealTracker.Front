@@ -3,13 +3,14 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 
 export type TabRoutes = {
     "Home": undefined,
-    "Meals": undefined
+    "Meals Tab": undefined
 }
 
 export type TabNavigation = BottomTabNavigationProp<TabRoutes, 'Home'>
 
 export type StackRoutes = {
+    "Meals": undefined,
     "New Meal": undefined
 }
 
-export type StackNavigation = NativeStackNavigationProp<StackRoutes, 'New Meal'>
+export type StackNavigation = NativeStackNavigationProp<StackRoutes, 'Meals'>
