@@ -5,13 +5,54 @@ export function NewMealScreen() {
     let [style, changeStyle] = useState(styles.validInput)
 
     return (
-        <View style={styles.view}>
-            <Text style={styles.inputLabel}>Quantity</Text>
-            <TextInput
-                style={style}
-                placeholder="(g)"
-                onChangeText={newText => validateInput(newText)}
-            />
+        <View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Name</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(Meal Name)"
+                />
+            </View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Quantity</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(g)"
+                    onChangeText={newText => validateInput(newText)}
+                />
+            </View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Calories</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(kcal)"
+                    onChangeText={newText => validateInput(newText)}
+                />
+            </View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Proteins</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(g)"
+                    onChangeText={newText => validateInput(newText)}
+                />
+            </View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Carbs</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(g)"
+                    onChangeText={newText => validateInput(newText)}
+                />
+            </View>
+            <View style={styles.view}>
+                <Text style={styles.inputLabel}>Fats</Text>
+                <TextInput
+                    style={style}
+                    placeholder="(g)"
+                    onChangeText={newText => validateInput(newText)}
+                />
+            </View>
         </View>
     )
 
@@ -29,7 +70,9 @@ const styles = StyleSheet.create({
     validInput: {
         borderWidth: 1,
         height: 38,
-        margin: 25,
+        marginTop: 25,
+        marginLeft: 25,
+        marginRight: 25,
         flexGrow: 1,
         padding: 10,
         borderColor: 'black'
@@ -37,7 +80,9 @@ const styles = StyleSheet.create({
     invalidInput: {
         borderWidth: 1,
         height: 38,
-        margin: 25,
+        marginTop: 25,
+        marginLeft: 25,
+        marginRight: 25,
         flexGrow: 1,
         padding: 10,
         borderColor: 'red'
@@ -45,7 +90,8 @@ const styles = StyleSheet.create({
     inputLabel: {
         marginLeft: 10,
         marginTop: 30,
-        fontSize: 18
+        fontSize: 18,
+        width: 70
     }
 })
 
