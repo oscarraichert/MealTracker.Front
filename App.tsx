@@ -10,9 +10,9 @@ const Tab = createBottomTabNavigator<TabRoutes>()
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{ tabBarStyle: styles.tab, tabBarLabelStyle: styles.label, tabBarActiveTintColor: '#B1E3FA' }}>
         <Tab.Screen options={{ headerShown: false }} name='Home' component={HomeScreen} />
-        <Tab.Screen options={{ headerShown: false }} name='Meals Tab' component={MealsTab} />
+        <Tab.Screen options={{ headerShown: false, title: 'Meals' }} name='Meals Tab' component={MealsTab} />
       </Tab.Navigator>
     </NavigationContainer>
   )
@@ -20,5 +20,13 @@ export default function App() {
 
 
 const styles = StyleSheet.create({
-
+  tab: {
+    backgroundColor: 'darkslategray'
+  },
+  label: {
+    color: 'white'
+  },
+  icon: {
+    color: 'white'
+  }
 })

@@ -1,5 +1,7 @@
+import { Entypo } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import DefaultButton from "../components/buttons/DefaultButton";
 
 export function NewMealScreen() {
     let [style, changeStyle] = useState(styles.validInput)
@@ -53,6 +55,9 @@ export function NewMealScreen() {
                     onChangeText={newText => validateInput(newText)}
                 />
             </View>
+            <View style={styles.buttonRow}>
+                <DefaultButton title="Save" onPress={() => console.log('teste')}></DefaultButton>
+            </View>
         </View>
     )
 
@@ -75,7 +80,8 @@ const styles = StyleSheet.create({
         marginRight: 25,
         flexGrow: 1,
         padding: 10,
-        borderColor: 'black'
+        borderColor: 'black',
+        borderRadius: 5
     },
     invalidInput: {
         borderWidth: 1,
@@ -85,13 +91,22 @@ const styles = StyleSheet.create({
         marginRight: 25,
         flexGrow: 1,
         padding: 10,
-        borderColor: 'red'
+        borderColor: 'red',
+        borderRadius: 5
     },
     inputLabel: {
         marginLeft: 10,
         marginTop: 30,
         fontSize: 18,
         width: 70
+    },
+    buttonRow: {
+        flexDirection: "row",
+        alignSelf: 'center',
+        paddingVertical: 40
+    },
+    button: {
+        margin: 2
     }
 })
 
