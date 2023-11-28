@@ -81,7 +81,9 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         padding: 10,
         borderColor: 'black',
-        borderRadius: 5
+        borderRadius: 5,
+        elevation: 10,
+        backgroundColor: 'lightgray'
     },
     invalidInput: {
         borderWidth: 1,
@@ -92,7 +94,9 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         padding: 10,
         borderColor: 'red',
-        borderRadius: 5
+        borderRadius: 5,
+        elevation: 10,
+        backgroundColor: 'lightsteelblue'
     },
     inputLabel: {
         marginLeft: 10,
