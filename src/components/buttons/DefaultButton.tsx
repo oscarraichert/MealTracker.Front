@@ -19,13 +19,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'darkslategray',
         paddingHorizontal: 20,
         paddingVertical: 5,
-        margin: 10,
         borderRadius: 5,
         elevation: 10
     },
     text: {
         color: 'white',
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: '500',
         letterSpacing: .5
     }

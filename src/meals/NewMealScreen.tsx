@@ -1,64 +1,90 @@
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import DefaultButton from "../components/buttons/DefaultButton";
 
 export function NewMealScreen() {
     let [style, changeStyle] = useState(styles.validInput)
 
     return (
-        <View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Name</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(Meal Name)"
-                />
+        <ScrollView>
+
+            <View style={styles.inputColumn}>
+                <View style={styles.view}>
+                    <Text style={styles.inputLabel}>Name</Text>
+                    <View style={style}>
+                        <TextInput
+                            style={styles.inputArea}
+                            placeholder="(Meal Name)"
+                        />
+                    </View>
+                </View>
             </View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Quantity</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(g)"
-                    onChangeText={newText => validateInput(newText)}
-                />
+
+            <View style={styles.body}>
+
+                <View style={styles.inputColumn}>
+                    <View style={styles.view}>
+                        <Text style={styles.inputLabel}>Quantity</Text>
+                        <View style={style}>
+                            <TextInput
+                                style={styles.inputArea}
+                                placeholder="(g)"
+                                onChangeText={newText => validateInput(newText)}
+                            />
+                            <MaterialCommunityIcons name="weight-gram" style={styles.icons} />
+                        </View>
+                    </View>
+                    <View style={styles.view}>
+                        <Text style={styles.inputLabel}>Calories</Text>
+                        <View style={style}>
+                            <TextInput
+                                style={styles.inputArea}
+                                placeholder="(kcal)"
+                                onChangeText={newText => validateInput(newText)}
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.view}>
+                        <Text style={styles.inputLabel}>Proteins</Text>
+                        <View style={style}>
+                            <TextInput
+                                style={styles.inputArea}
+                                placeholder="(g)"
+                                onChangeText={newText => validateInput(newText)}
+                            />
+                        </View>
+                    </View>
+                </View>
+
+                <View style={styles.inputColumn}>
+                    <View style={styles.view}>
+                        <Text style={styles.inputLabel}>Carbs</Text>
+                        <View style={style}>
+                            <TextInput
+                                style={styles.inputArea}
+                                placeholder="(g)"
+                                onChangeText={newText => validateInput(newText)}
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.view}>
+                        <Text style={styles.inputLabel}>Fats</Text>
+                        <View style={style}>
+                            <TextInput
+                                style={styles.inputArea}
+                                placeholder="(g)"
+                                onChangeText={newText => validateInput(newText)}
+                            />
+                        </View>
+                    </View>
+                    <View style={styles.buttonRow}>
+                        <DefaultButton title="Save" onPress={() => console.log('teste')}></DefaultButton>
+                    </View>
+                </View>
+
             </View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Calories</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(kcal)"
-                    onChangeText={newText => validateInput(newText)}
-                />
-            </View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Proteins</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(g)"
-                    onChangeText={newText => validateInput(newText)}
-                />
-            </View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Carbs</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(g)"
-                    onChangeText={newText => validateInput(newText)}
-                />
-            </View>
-            <View style={styles.view}>
-                <Text style={styles.inputLabel}>Fats</Text>
-                <TextInput
-                    style={style}
-                    placeholder="(g)"
-                    onChangeText={newText => validateInput(newText)}
-                />
-            </View>
-            <View style={styles.buttonRow}>
-                <DefaultButton title="Save" onPress={() => console.log('teste')}></DefaultButton>
-            </View>
-        </View>
+        </ScrollView>
     )
 
     function validateInput(text: string) {
@@ -69,48 +95,63 @@ export function NewMealScreen() {
 }
 
 const styles = StyleSheet.create({
+    body: {
+        flexDirection: "row",
+        marginBottom: 25
+    },
     view: {
-        flexDirection: 'row'
+        flexDirection: 'column'
+    },
+    inputColumn: {
+        flexDirection: "column",
+        flexGrow: 1,
+        marginHorizontal: 10
     },
     validInput: {
+        flexDirection: "row",
         borderWidth: 1,
-        height: 38,
-        marginTop: 25,
-        marginLeft: 25,
-        marginRight: 25,
+        height: 48,
+        marginTop: 15,
         flexGrow: 1,
-        padding: 10,
-        borderColor: 'black',
-        borderRadius: 5,
+        borderColor: 'darkslategray',
+        borderRadius: 25,
         elevation: 10,
         backgroundColor: 'lightgray'
     },
     invalidInput: {
+        flexDirection: "row",
         borderWidth: 1,
-        height: 38,
-        marginTop: 25,
-        marginLeft: 25,
-        marginRight: 25,
+        height: 48,
+        marginTop: 15,
         flexGrow: 1,
-        padding: 10,
         borderColor: 'red',
-        borderRadius: 5,
+        borderRadius: 25,
         elevation: 10,
-        backgroundColor: 'lightsteelblue'
+        backgroundColor: 'lightgray'
+    },
+    inputArea: {
+        fontSize: 18,
+        flexGrow: 1,
+        marginVertical: 10,
+        marginHorizontal: 15
     },
     inputLabel: {
-        marginLeft: 10,
-        marginTop: 30,
+        marginTop: 20,
+        marginLeft: 15,
         fontSize: 18,
-        width: 70
+        width: 70,
+        color: 'darkslategray'
     },
     buttonRow: {
         flexDirection: "row",
         alignSelf: 'center',
-        paddingVertical: 40
+        paddingTop: 55
     },
-    button: {
-        margin: 2
+    icons: {
+        fontSize: 28,
+        color: "darkslategray",
+        alignSelf: "flex-end",
+        marginVertical: 10
     }
 })
 
