@@ -10,7 +10,7 @@ export function MealsScreen() {
         <View>
             <View style={styles.body}>
                 <View style={styles.iconsRow}>
-                    <Entypo.Button iconStyle={styles.icon} name="add-to-list" size={26} onPress={() => navigation.navigate('New Meal')} />
+                    <Entypo.Button iconStyle={styles.icon} style={styles.button} name="add-to-list" size={26} onPress={() => navigation.navigate('New Meal')} />
                 </View>
             </View>
         </View>
@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
     iconsRow: {
         flexDirection: "row",
         justifyContent: "space-between"
+    },
+    button: {
+        backgroundColor: 'darkslategray'
     },
     icon: {
         marginRight: 0
