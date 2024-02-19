@@ -4,6 +4,7 @@ import { TabRoutes } from './src/navigator/Routes';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MealsTab } from './src/meals/MealsTab';
 import { HomeScreen } from './src/home/HomeScreen';
+import React from 'react';
 
 const Tab = createBottomTabNavigator<TabRoutes>()
 
