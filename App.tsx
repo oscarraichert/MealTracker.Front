@@ -19,7 +19,7 @@ export default function App() {
   )
 }
 
-
+//teste
 const styles = StyleSheet.create({
   tab: {
     backgroundColor: 'darkslategray'
