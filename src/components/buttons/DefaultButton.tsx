@@ -17,14 +17,14 @@ export default function DefaultButton(props: ButtonProps) {
 const styles = StyleSheet.create({
     button: {
         backgroundColor: 'darkslategray',
-        paddingHorizontal: 20,
-        paddingVertical: 5,
-        borderRadius: 5,
+        paddingHorizontal: 70,
+        paddingVertical: 15,
+        borderRadius: 8,
         elevation: 10
     },
     text: {
         color: 'white',
-        fontSize: 22,
+        fontSize: 32,
         fontWeight: '500',
         letterSpacing: .5
     }

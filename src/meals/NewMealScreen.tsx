@@ -4,7 +4,9 @@ import { Button, ScrollView, StyleSheet, Text, TextInput, View } from "react-nat
 import DefaultButton from "../components/buttons/DefaultButton";
 
 export function NewMealScreen() {
-    let [style, changeStyle] = useState(styles.validInput)
+    let [style, changeStyle] = useState(styles.validInput);
+    let [name, setName] = useState('');
+    let [quantity, setQuantity] = useState('');
 
     return (
         <ScrollView>
@@ -16,6 +18,7 @@ export function NewMealScreen() {
                         <TextInput
                             style={styles.inputArea}
                             placeholder="(Meal Name)"
+                            onChangeText={text => setName(text)}
                         />
                     </View>
                 </View>
@@ -30,9 +33,8 @@ export function NewMealScreen() {
                             <TextInput
                                 style={styles.inputArea}
                                 placeholder="(g)"
-                                onChangeText={newText => validateInput(newText)}
+                                onChangeText={newText => { validateInput(newText); setQuantity(newText) }}
                             />
-                            <MaterialCommunityIcons name="weight-gram" style={styles.icons} />
                         </View>
                     </View>
                     <View style={styles.view}>
@@ -79,7 +81,7 @@ export function NewMealScreen() {
                         </View>
                     </View>
                     <View style={styles.buttonRow}>
-                        <DefaultButton title="Save" onPress={() => console.log('teste')}></DefaultButton>
+                        <DefaultButton title="Save" onPress={() => handleSave()}></DefaultButton>
                     </View>
                 </View>
 
@@ -92,11 +94,16 @@ export function NewMealScreen() {
 
         !regex.test(text) ? changeStyle(styles.invalidInput) : changeStyle(styles.validInput)
     }
+
+    function handleSave() {
+        console.log(name)
+        console.log(quantity)
+    }
 }
 
 const styles = StyleSheet.create({
     body: {
-        flexDirection: "row",
+        flexDirection: 'column',
         marginBottom: 25
     },
     view: {
@@ -105,7 +112,7 @@ const styles = StyleSheet.create({
     inputColumn: {
         flexDirection: "column",
         flexGrow: 1,
-        marginHorizontal: 10
+        marginHorizontal: 100
     },
     validInput: {
         flexDirection: "row",
@@ -131,9 +138,9 @@ const styles = StyleSheet.create({
     },
     inputArea: {
         fontSize: 18,
-        flexGrow: 1,
         marginVertical: 10,
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        flexGrow: 1
     },
     inputLabel: {
         marginTop: 20,
@@ -143,9 +150,9 @@ const styles = StyleSheet.create({
         color: 'darkslategray'
     },
     buttonRow: {
-        flexDirection: "row",
+        flexDirection: 'row',
         alignSelf: 'center',
-        paddingTop: 55
+        paddingTop: 50
     },
     icons: {
         fontSize: 28,
@@ -154,4 +161,3 @@ const styles = StyleSheet.create({
         marginVertical: 10
     }
 })
-
